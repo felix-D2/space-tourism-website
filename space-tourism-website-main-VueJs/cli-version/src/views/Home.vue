@@ -16,6 +16,9 @@
   </div>
 </template>
 
+
+
+
 <script>
 // @ is an alias to /src
 import MenuItem from '@/components/MenuItem.vue'
@@ -27,3 +30,15 @@ export default {
   }
 }
 </script>
+
+
+
+
+<style lang="scss">
+  .home {
+    background: black;
+    height: 100%;
+    width: 100%;
+  }
+  
+</style>
