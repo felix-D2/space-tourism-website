@@ -1,29 +1,33 @@
 <template>
-  <div :class="$style.destination">
-    <div :class="$style.text">
-      <h1>This is an Destination page</h1>
-
+  <div class="destination">
     
-      <h5>01 Pick your destination</h5>
+    <div class="destinationView">
+      <h5><span>01</span> Pick your destination</h5>
 
-      Moon
-      Mars
-      Europa
-      Titan
+      <img class="destination_images" :src="data.destinations[0].images.webp" alt="planet Image" />
+    </div>
 
-      <h2>Europa</h2>
 
-      The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
-      winter lover’s dream. With an icy surface, it’s perfect for a bit of 
-      ice skating, curling, hockey, or simple relaxation in your snug 
-      wintery cabin.
 
-      Avg. distance
-      628 mil. km
+    <div class="information">
+      <MenuDestinationItem/>
 
-      Est. travel time
-      3 years
+      <h2>{{data.destinations[0].name}} </h2>  
 
+      <p>
+        {{data.destinations[0].description}}
+      </p>
+
+      <p>
+        Avg. distance
+        {{data.destinations[0].distance}}
+
+      </p>
+
+      <p>
+        Est. travel time
+        {{data.destinations[0].travel}}
+      </p>
 
     </div>
     
@@ -32,23 +36,45 @@
 
 
 
-<style module>
+<script>
+  import MenuDestinationItem from '@/components/MenuDestinationItem.vue'
+  import { mapState } from 'vuex'
+
+  export default {
+    name: 'Destination',
+    components: {
+      MenuDestinationItem
+    },
+
+    data() {
+      return{
+
+      }
+    },
+
+
+    computed: {
+      ...mapState(['data'])
+    },
+
+  }
+
+</script>
+
+
+
+
+<style scoped>
+
   .destination {
     position: absolute;
 
+    background:  center fixed no-repeat url("/images/destination/background-destination-desktop.jpg");
+    background-size: cover;   /* Background resize */
     height: 100%;
     width: 100%;
-    border-width:5px;
-    border-style:dotted;
-    border-color:rgb(247, 2, 2);
-
-    position: absolute;
-    top: 0px;
 
     z-index:1;
-    
-
-    background-image: url("/images/home/background-home-desktop.jpg");
   }
 
 
