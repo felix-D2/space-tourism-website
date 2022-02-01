@@ -14,7 +14,7 @@ const routes = [
   },
 
   {
-    path: '/destination',
+    path: '/destination/:id',
     name: 'Destination',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -23,11 +23,11 @@ const routes = [
     props:true,
     meta: {
       title: 'Destination - Space tourisme website'
-    }
+    },
   },
 
   {
-    path: '/crew',
+    path: '/crew/:id',
     name: 'Crew',
     component: () => import(/* webpackChunkName: "crew" */ '../views/Crew.vue'),
     props:true,

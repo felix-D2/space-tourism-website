@@ -1,30 +1,31 @@
 <template>
     <div class="nav">
 
-      <router-link :to="{name: 'Destination', params : {id: '0'}}"
+
+      <router-link :to="{name: 'Crew', params : {id: '0'}}"
       class="navText ">
-        Moon
+        0
         <div class="linkNavUnderline"></div>
       </router-link>    
 
 
-      <router-link :to="{name: 'Destination', params : {id: '1'}}"
+      <router-link :to="{name: 'Crew', params : {id: '1'}}"
       class="navText ">
-        Mars
+        1
         <div class="linkNavUnderline"></div>
       </router-link>    
 
 
-      <router-link :to="{name: 'Destination', params : {id: '2'}}"
+      <router-link :to="{name: 'Crew', params : {id: '2'}}"
       class="navText ">
-        Europa
+        2
         <div class="linkNavUnderline"></div>
       </router-link>   
 
 
-      <router-link :to="{name: 'Destination', params : {id: '3'}}"
+      <router-link :to="{name: 'Crew', params : {id: '3'}}"
       class="navText ">
-        Titan
+        3
         <div class="linkNavUnderline"></div>
       </router-link>   
 
@@ -35,14 +36,12 @@
 
 
 
+
 <script>
   export default {
-    name: 'MenuDestinationItem',
+    name: 'MenuCrewItem',
   }
 </script>
-
-
-
 
 
 
@@ -52,13 +51,16 @@
 
 
   .nav 
-  {    
+  {
     width: 342px;
     height: 19px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
+    border: 2px solid rgb(19, 200, 224);
 
   }
 

@@ -81,6 +81,8 @@
 
     font-style: normal;
     font-weight: normal;
+
+    text-decoration: none;
   }
 
 
@@ -161,7 +163,7 @@
 
     font-size: 18px;
 
-    color: #FFFFFF;
+    color: #D0D6F9;
 
     text-align: start;
   }

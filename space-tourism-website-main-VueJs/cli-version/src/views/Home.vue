@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div :class="$style.home">
+    <div class="home">
 
-      <div :class="$style.text">
+      <div class="contents">
         
         <h5>So, you want to travel to</h5>
 
@@ -17,9 +17,11 @@
       </div>
 
 
-      <div :class="$style.exploreButton">
-        <router-link to="/destination" :class="$style.linkExploreButton">Explore</router-link>
-      </div>
+      <button class="exploreButton" @click="goDestination()">
+        Explore
+
+        <!-- <router-link to="/destination" class="linkExploreButton">Explore</router-link> -->
+      </button>
 
 
     </div>
@@ -33,6 +35,14 @@
 <script>
   export default {
     name: 'Home',
+
+    methods: {
+
+      goDestination() {
+        console.log("destination");
+        this.$router.push({name: 'Destination', params: {id: "0"}})
+      }
+    }
   }
 </script>
 
@@ -40,7 +50,7 @@
 
 
 
-<style module>
+<style scoped>
 
 
   .home {
@@ -52,11 +62,10 @@
     width: 100%;
 
     z-index: 1;
-
   }
 
 
-  .text{
+  .contents{
     position: relative;
     top: 35%;
     left: 8%;
@@ -69,8 +78,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
-
   }
 
 

@@ -14,7 +14,7 @@
             </router-link>
             
             
-            <router-link to="/destination"
+            <router-link :to="{name: 'Destination', params: {id: '0'}}"
             class="linkNav"> 
 
               <span>01</span> Destination
@@ -22,7 +22,7 @@
             </router-link>
             
 
-            <router-link to="/crew"
+            <router-link :to="{name: 'Crew', params: {id: '0'}}"
             class="linkNav">
             
             <span>02</span> Crew
@@ -86,8 +86,7 @@
     display: flex;
 
     align-items: center;
-    justify-content: end;
-
+    justify-content: flex-end;
   }
 
 
@@ -161,6 +160,8 @@
 
 
 
+
+/* ___Underline___ */
 
   .linkNavUnderline
   {

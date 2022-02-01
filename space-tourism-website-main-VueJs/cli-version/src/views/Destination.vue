@@ -1,33 +1,52 @@
 <template>
   <div class="destination">
-    
-    <div class="destinationView">
-      <h5><span>01</span> Pick your destination</h5>
 
-      <img class="destination_images" :src="data.destinations[0].images.webp" alt="planet Image" />
-    </div>
+    <div class="contents">
+
+      <div class="display">
+        <h5><span>01</span> Pick your destination</h5>
+
+        <img class="images" :src="data.destinations[this.id].images.png" alt="planet Image" />
+      </div>
 
 
 
-    <div class="information">
-      <MenuDestinationItem/>
+      <div class="information">
+        <div class="menu"><MenuDestinationItem/></div>
 
-      <h2>{{data.destinations[0].name}} </h2>  
+        <h2>{{test.name}} </h2>  
 
-      <p>
-        {{data.destinations[0].description}}
-      </p>
+        <div class="bodyText">
+          {{data.destinations[this.id].description}}
+        </div>
 
-      <p>
-        Avg. distance
-        {{data.destinations[0].distance}}
+        
+        <div class="ligne"></div>
 
-      </p>
 
-      <p>
-        Est. travel time
-        {{data.destinations[0].travel}}
-      </p>
+        <diV class="travelInformation">
+
+          <div class="subheading2">
+            Avg. distance
+          </div>
+
+          <div class="subheading1">
+            {{data.destinations[this.id].distance}}
+          </div>
+
+          
+
+          <div class="subheading2">
+            Est. travel time
+          </div>
+
+          <div class="subheading1">
+            {{data.destinations[this.id].travel}}
+          </div>
+      
+        </diV>
+
+      </div>
 
     </div>
     
@@ -42,20 +61,49 @@
 
   export default {
     name: 'Destination',
+     props: {'id': {required: true}},  // type: String,
+
     components: {
       MenuDestinationItem
     },
 
     data() {
       return{
-
+        destinationId: 0,
       }
     },
 
 
     computed: {
-      ...mapState(['data'])
+      ...mapState(['data']),
+
+      test() {
+        return this.data.destinations[this.id];
+      },
+      // ...mapState({count: state => state.destinations[this.id]}),
+
     },
+
+    methods: {
+      destinationById(){
+        console.log("Destination by id");
+        if(this.id === "moon"){
+          console.log("id : ");
+          console.log(this.id);
+          destinationId = 0;
+
+        }
+        else if(this.id === "mars"){
+          destinationId = 1;
+        }
+        else{
+          destinationId = 0;
+        }
+
+
+        return destinationId;
+      }
+    }
 
   }
 
@@ -65,6 +113,8 @@
 
 
 <style scoped>
+
+  /*    ___Background___    */
 
   .destination {
     position: absolute;
@@ -76,13 +126,125 @@
 
     z-index:1;
   }
+  /*    *****************    */
 
 
-  .text
+
+  .contents
   {
     position: absolute;
-    top: 300px;
+    width: 80%;
 
-    color:white;
+
+    top: 20%;
+    right: 10%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    border: 2px solid rgb(224, 19, 19);
   }
+
+
+
+
+  /*      ___Display___      */
+  /*  (title of view and picture) */
+  .display
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+
+    border: 2px solid rgb(19, 224, 19);
+  }
+
+
+  h5
+  {
+    margin-bottom: 11%;
+
+    align-self: flex-start;
+  }
+
+
+  h5 span
+  {
+    opacity: 0.25;
+  }
+
+
+  .images
+  {
+    margin-left: 5%;
+  }
+  /*      *************      */
+
+
+
+
+  /*    ___Information___ */
+  /*  (information of the destination) */
+  .information
+  {
+    width: 445px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+
+    border: 2px solid rgb(160, 10, 219);
+  }
+
+
+  .menu
+  {
+    margin-top: 15%;
+    margin-bottom: 10%;
+  }
+
+
+  .travelInformation
+  {
+    display: flex;
+    flex-wrap: wrap;
+
+
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+
+  .ligne
+  {
+    width: 100%;
+    height: 1px;
+
+    margin-top: 15%;
+    margin-bottom: 8%;
+
+    background: #383B4B;
+  }
+
+
+  .subheading1, .subheading2
+  {
+    width: 40%;
+    text-align: left;
+  }
+
+  .subheading2
+  {
+    margin-bottom: 3%;
+  }
+
+  .travelInformation > .subheading1
+  {
+    order: 3;
+  }
+  /*      *************      */
+
 </style>
