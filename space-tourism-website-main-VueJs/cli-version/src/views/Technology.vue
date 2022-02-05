@@ -1,21 +1,189 @@
 <template>
   <div class="technology">
-    <h1>This is an Technology page</h1>
+    <div class="contents">
 
 
-    <h5>03 Space launch 101</h5>
+      <div class="information">
+        <h5><span>03</span> Space launch 101</h5>
 
-    1
-    2
-    3
+        <div class="mainInformation">
+          <div class="menu"><MenuTechnologyItem/></div>
 
-    The terminology...
+          <div class="rightInfo">
+            <div class="navText">The terminology...</div>
 
-    <h3>Space capsule</h3>
+            <h3>{{data.technology[this.id].name}} </h3>  
 
-    A space capsule is an often-crewed spacecraft that uses a blunt-body reentry 
-    capsule to reenter the Earth's atmosphere without wings. Our capsule is where 
-    you'll spend your time during the flight. It includes a space gym, cinema, 
-    and plenty of other activities to keep you entertained.
+
+            <div class="bodyText">
+              {{data.technology[this.id].description}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="display">
+        <img class="images" :src="data.technology[this.id].images.portrait" alt="technology Image" />
+      </div>
+
+    </div>
   </div>
 </template>
+
+
+
+
+
+
+
+<script>
+  import MenuTechnologyItem from '@/components/MenuTechnologyItem.vue'
+  import { mapState } from 'vuex'
+
+  export default {
+    name: 'Technology',
+     props: {'id': {required: true}},  // type: String,
+
+    components: {
+      MenuTechnologyItem
+    },
+
+
+    computed: {
+      ...mapState(['data']),
+    },
+
+  }
+
+</script>
+
+
+
+
+
+
+
+
+<style scoped>
+
+  /*    ___Background___    */
+
+  .technology {
+    position: absolute;
+
+    background:  center fixed no-repeat url("/images/technology/background-technology-desktop.jpg");
+    background-size: cover;   /* Background resize */
+    height: 100%;
+    width: 100%;
+
+    z-index:1;
+  }
+  /*    *****************    */
+
+
+
+  .contents
+  {
+    position: absolute;
+    width: 90%;
+
+    top: 20%;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    border: 2px solid rgb(224, 19, 19);
+  }
+
+
+
+
+  /*      ___Display___      */
+  /*  (picture) */
+  .display
+  {
+    display: flex;
+    justify-content: flex-end;
+    border: 2px solid rgb(19, 224, 19);
+  }
+
+  .images
+  {
+    width: 90%;
+  }
+ /*    *****************    */
+
+
+
+
+/*    ___Information___ */
+  /*  (technology information) */
+  .information
+  {
+    width: 55%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border: 2px solid rgb(160, 10, 219);
+  }
+
+
+  h5
+  {
+    margin-bottom: 11%;
+
+    border: 2px solid rgb(45, 196, 58);
+  }
+
+
+  h5 span
+  {
+    opacity: 0.25;
+  }
+
+
+  .mainInformation
+  {
+    display: flex;
+    justify-content: space-between;
+
+    border: 2px solid rgb(219, 163, 10);
+  }
+
+  .rightInfo
+  {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border: 2px solid rgb(48, 10, 219);
+  }
+
+  .navText
+  {
+    margin-bottom: 1%;
+  }
+
+  h3 
+  {
+    margin-bottom: 3%;
+    text-align: start;
+  }
+
+  .bodyText
+  {
+    width: 70%;
+  }
+
+  .menu
+  {
+    border: 2px solid rgb(19, 224, 214);
+  }
+/*      *************      */
+</style>

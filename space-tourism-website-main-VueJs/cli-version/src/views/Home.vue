@@ -17,12 +17,12 @@
       </div>
 
 
-      <button class="exploreButton" @click="goDestination()">
+    
+      <a class="exploreButton" @click="goDestination()">
         Explore
-
-        <!-- <router-link to="/destination" class="linkExploreButton">Explore</router-link> -->
-      </button>
-
+        <div class="exploreButtonHover"> </div>
+      </a>
+   
 
     </div>
   </section>
@@ -86,17 +86,17 @@
     position: absolute;
     bottom: 15%;
     right: 10%;
-    /* transform: translate(0, 0, 50%); */
+    
 
     width: 274px;
     height: 274px;
-
     border-radius: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
     
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(175, 9, 9);
   }
 
   .linkExploreButton    /*Bellefair Regular - 32px*/
@@ -114,6 +114,23 @@
     color: #0B0D17;
   }
 
+
+.exploreButtonHover
+{
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+  width: 450px;
+  height: 450px;
+  border-radius: 100%;
+
+  background-color:rgb(255, 255, 255);
+  opacity: 0.1;
+}
 
   
 </style>

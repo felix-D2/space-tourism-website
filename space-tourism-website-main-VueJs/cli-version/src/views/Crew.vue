@@ -135,6 +135,12 @@
     opacity: 0.25;
   }
 
+  .menu
+  {
+    margin-top: 13%;
+  }
+
+
   .images
   {
     width: 30%;
@@ -167,7 +173,8 @@
     opacity: 0.5;
   }
 
-  h3{
+  h3
+  {
     text-align: left;
     margin-bottom: 2%;
   }

@@ -30,7 +30,7 @@
             </router-link>
 
 
-            <router-link to="/technology"
+            <router-link :to="{name: 'Technology', params: {id: '0'}}"
             class="linkNav"> 
             
             <span>03</span> Technology

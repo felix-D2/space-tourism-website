@@ -37,7 +37,7 @@ const routes = [
   },
 
   {
-    path: '/technology',
+    path: '/technology/:id',
     name: 'Technology',
     component: () => import(/* webpackChunkName: "technology" */ '../views/Technology.vue'),
     props:true,
