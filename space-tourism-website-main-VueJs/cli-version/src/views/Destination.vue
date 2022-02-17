@@ -1,14 +1,11 @@
 <template>
   <div class="destination">
-
     <div class="contents">
 
       <div class="display">
         <h5><span>01</span> Pick your destination</h5>
-
         <img class="images" :src="data.destinations[this.id].images.png" alt="planet Image" />
       </div>
-
 
 
       <div class="information">
@@ -45,11 +42,8 @@
           </div>
       
         </diV>
-
       </div>
-
     </div>
-    
   </div>
 </template>
 

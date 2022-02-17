@@ -14,15 +14,13 @@
           because we’ll give you a truly out of this world experience!
         </div>
 
+
       </div>
 
 
-    
-      <a class="exploreButton" @click="goDestination()">
+      <button class="exploreButton" @click="goDestination()" type="button">
         Explore
-        <div class="exploreButtonHover"> </div>
-      </a>
-   
+      </button>
 
     </div>
   </section>
@@ -41,7 +39,8 @@
       goDestination() {
         console.log("destination");
         this.$router.push({name: 'Destination', params: {id: "0"}})
-      }
+      },
+
     }
   }
 </script>
@@ -90,17 +89,21 @@
 
     width: 274px;
     height: 274px;
-    border-radius: 100%;
+    border-radius: 50%;
+    margin: 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
     
-    background-color:rgb(175, 9, 9);
-  }
+    background-color:rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
 
-  .linkExploreButton    /*Bellefair Regular - 32px*/
-  {
+    cursor: pointer;
+
+
+    /*      ___Font___      */
+    /*Bellefair Regular - 32px*/
     font-family: 'Bellefair', serif;
     text-transform: uppercase;
 
@@ -115,24 +118,75 @@
   }
 
 
-.exploreButtonHover
+
+
+ /*      Animations      */
+
+
+/* exploreButton */
+  .exploreButton:hover
+  {
+    box-shadow: 0 0 0 0 rgb(255, 255, 255, 1);
+    animation: pulse 0.9s forwards;
+  }
+
+  @keyframes pulse 
+  {
+    to
+    {
+      box-shadow: 0 0 0 88px rgb(255, 255, 255, 0.1);
+    }
+  }
+
+
+
+
+/* h5 */
+h5
 {
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
-
-
-  width: 450px;
-  height: 450px;
-  border-radius: 100%;
-
-  background-color:rgb(255, 255, 255);
-  opacity: 0.1;
+  animation: apparition 0.8s forwards;
+  opacity: 0;
+}
+/* h1 */
+h1
+{
+  animation: apparition 0.8s 0.5s forwards;
+  opacity: 0;
 }
 
-  
+@keyframes apparition 
+{
+  from {
+    
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+
+
+/*    Responsive      */
+
+
+
+  @media screen and (max-width: 780px)
+  {/* Tablet version, or lower than max-width */
+
+  .home {
+    background:  center fixed no-repeat url("/images/home/background-home-tablet.jpg");
+  }
+
+    .exploreButton
+    {
+      background-color:rgb(24, 111, 224);
+    }
+  }
+
+
 </style>
 
 

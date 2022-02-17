@@ -162,6 +162,7 @@
     line-height: 32px;
 
     font-size: 18px;
+    line-height: 32px;
 
     color: #D0D6F9;
 

@@ -14,7 +14,7 @@
             </router-link>
             
             
-            <router-link :to="{name: 'Destination', params: {id: '0'}}"
+            <router-link :to="{name: 'Destination', params: {id: '0'} }"
             class="linkNav"> 
 
               <span>01</span> Destination
@@ -169,14 +169,22 @@
 
     position: relative; 
     top: 37px;
+    margin: 0, auto, 0;
 
     height: 3px;
     width: 100%;
 
+
     background: #ffffff;
 
     pointer-events: none;
+
+    transition: opacity 0.3s;
   }
+
+
+
+
 
 
   .router-link-active > .linkNavUnderline   /* Link underline activated */

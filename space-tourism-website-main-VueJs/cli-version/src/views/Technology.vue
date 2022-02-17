@@ -67,7 +67,7 @@
 
 <style scoped>
 
-  /*    ___Background___    */
+/*    ___Background___    */
 
   .technology {
     position: absolute;
@@ -79,7 +79,7 @@
 
     z-index:1;
   }
-  /*    *****************    */
+/*    *****************    */
 
 
 
@@ -88,7 +88,7 @@
     position: absolute;
     width: 90%;
 
-    top: 20%;
+    top: 25%;
     right: 0;
 
     display: flex;

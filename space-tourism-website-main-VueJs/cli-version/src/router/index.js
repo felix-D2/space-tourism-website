@@ -7,20 +7,18 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    props:true,
+    props: true,
     meta: {
-      title: 'Home - Space tourisme website'
+      title: 'Home - Space tourisme website'    //Change the title of the webPage
     }
   },
+
 
   {
     path: '/destination/:id',
     name: 'Destination',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "destination" */ '../views/Destination.vue'),
-    props:true,
+    props: true,
     meta: {
       title: 'Destination - Space tourisme website'
     },
@@ -30,7 +28,7 @@ const routes = [
     path: '/crew/:id',
     name: 'Crew',
     component: () => import(/* webpackChunkName: "crew" */ '../views/Crew.vue'),
-    props:true,
+    props: true,
     meta: {
       title: 'Crew - Space tourisme website'
     }
@@ -40,7 +38,7 @@ const routes = [
     path: '/technology/:id',
     name: 'Technology',
     component: () => import(/* webpackChunkName: "technology" */ '../views/Technology.vue'),
-    props:true,
+    props: true,
     meta: {
       title: 'Technology - Space tourisme website'
     }
@@ -67,5 +65,9 @@ router.afterEach((to, from) => {
   console.log(from, to);
   document.title = to.meta.title;
 });
+
+
+
+
 
 export default router

@@ -80,6 +80,8 @@
     background: #ffffff;
 
     pointer-events: none;
+
+    transition: opacity 0.3s;
   }
 
 

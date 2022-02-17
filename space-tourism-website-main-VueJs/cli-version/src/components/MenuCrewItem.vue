@@ -30,9 +30,10 @@ export default {
 }
 
 .navText {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   border-radius: 100%;
+
 
   background-color: rgb(255, 255, 255);
   opacity: 0.17;

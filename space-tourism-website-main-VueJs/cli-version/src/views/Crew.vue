@@ -4,34 +4,29 @@
 
     <div class="contents">
 
-      <div class="display">
 
+      <h5><span>02</span> Meet your crew</h5>
 
-        <diV class="crewInformation">
-          <h5><span>02</span> Meet your crew</h5>
+      <div class="information">
 
+          
 
           <h4>{{data.crew[this.id].role}}</h4>
 
 
-          <h3>{{data.crew[this.id].name}} </h3>  
+          <h3>{{data.crew[this.id].name}}</h3>  
 
 
           <div class="bodyText">
             {{data.crew[this.id].bio}}
-            
           </div>
-
-          <div class="menu"><MenuCrewItem/></div>
-
-        </div>
-
-
       </div>
 
+      <div class="menu"><MenuCrewItem/></div>
 
-      <img class="images" :src="data.crew[this.id].images.png" alt="planet Image" />
-
+      <div class="display">
+        <img class="images" :src="data.crew[this.id].images.png" alt="planet Image" />
+      </div>
     </div>
   </div>
 
@@ -78,6 +73,7 @@
 
 <style scoped>
 
+/*    ___Background___    */
   .crew {
     position: absolute;
 
@@ -88,46 +84,33 @@
 
     z-index:1;
   }
+/*    *****************    */
+
 
 
   .contents
   {
     position: absolute;
+    height: 75%;
     width: 80%;
     
 
-    top: 25%;
+    bottom: 0;
     right: 10%;
 
     display: flex;
-
-    
-    justify-content: space-between;
-    align-items: flex-start;
-    
-
+    justify-content: flex-start;
+    align-items: flex-end;
 
     border: 2px solid rgb(224, 19, 19);
-
   }
 
 
 
-  .display
+  h5
   {
-    width: 600px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-
-    border: 2px solid rgb(19, 224, 19);
-  }
-  .display h5
-  {
-    margin-bottom: 20%;
-
-    align-self: flex-start;
+    position: absolute;
+    top: 0;
   }
 
   h5 span
@@ -135,51 +118,90 @@
     opacity: 0.25;
   }
 
-  .menu
+
+
+
+/*    ___Information___ */
+  /*  (Crew information) */
+
+  .information
   {
-    margin-top: 13%;
-  }
+    height: 75%;
+    width: 55%;
+    align-self: flex-center;
 
-
-  .images
-  {
-    width: 30%;
-
-    border: 2px solid rgb(160, 10, 219);
-  }
-
-
-
-
-
-  .crewInformation
-  {
     display: flex;
-
     flex-direction: column;
-
     justify-content: flex-start;
     align-items: flex-start;
-    
+
+    border: 2px solid rgb(224, 152, 19);
   }
+
 
   h4
   {
-    width: 40%;
-    text-align: left;
+    justify-self: flex-start;
 
+    text-align: left;
     margin-bottom: 2%;
 
     opacity: 0.5;
+
+    border: 2px solid rgb(6, 230, 6);
   }
+
 
   h3
   {
     text-align: left;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
+
+    border: 2px solid rgb(207, 19, 224);
   }
 
 
+  .bodyText
+  {
+    width: 70%;
+
+    border: 2px solid rgb(19, 200, 224);
+  }
+
+  .menu
+  {    
+    position: absolute;
+    bottom: 5%;
+
+    border: 2px solid rgb(19, 22, 224);
+  }
+
+
+
+
+  /*      ___Display___      */
+  /*  (picture) */
+  .display
+  {
+
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgb(19, 224, 19);
+  }
+
+  .images
+  {
+    width: 75%;
+  }
+ /*    *****************    */
+
+
+
+
+
+
+/* 
+??????????? */
 
   .travelInformation > .subheading1
   {
