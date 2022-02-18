@@ -4,17 +4,19 @@
 
       <div class="display">
         <h5><span>01</span> Pick your destination</h5>
-        <img class="images" :src="data.destinations[this.id].images.png" alt="planet Image" />
+        <img class="images" :src="destinationData.images.png" alt="planet Image" />
       </div>
 
 
       <div class="information">
-        <div class="menu"><MenuDestinationItem/></div>
+        <div class="menu"><MenuDestinationItem @change-param="addNewParam" /></div>
 
-        <h2>{{test.name}} </h2>  
+        
+
+        <h2>{{destinationData.name}}</h2>  
 
         <div class="bodyText">
-          {{data.destinations[this.id].description}}
+          {{destinationData.description}}
         </div>
 
         
@@ -28,7 +30,7 @@
           </div>
 
           <div class="subheading1">
-            {{data.destinations[this.id].distance}}
+            {{destinationData.distance}}
           </div>
 
           
@@ -38,7 +40,7 @@
           </div>
 
           <div class="subheading1">
-            {{data.destinations[this.id].travel}}
+            {{destinationData.travel}}
           </div>
       
         </diV>
@@ -55,7 +57,7 @@
 
   export default {
     name: 'Destination',
-     props: {'id': {required: true}},  // type: String,
+    //  props: {'id': {required: true}},  // type: String,
 
     components: {
       MenuDestinationItem
@@ -63,7 +65,7 @@
 
     data() {
       return{
-        destinationId: 0,
+        planet: 0,
       }
     },
 
@@ -71,34 +73,16 @@
     computed: {
       ...mapState(['data']),
 
-      test() {
-        return this.data.destinations[this.id];
+      destinationData() {
+        return this.data.destinations[this.planet];
       },
-      // ...mapState({count: state => state.destinations[this.id]}),
-
     },
 
     methods: {
-      destinationById(){
-        console.log("Destination by id");
-        if(this.id === "moon"){
-          console.log("id : ");
-          console.log(this.id);
-          destinationId = 0;
-
-        }
-        else if(this.id === "mars"){
-          destinationId = 1;
-        }
-        else{
-          destinationId = 0;
-        }
-
-
-        return destinationId;
+      addNewParam(amount) {
+        this.planet = amount.nb
       }
     }
-
   }
 
 </script>

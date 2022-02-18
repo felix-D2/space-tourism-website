@@ -7,16 +7,16 @@
         <h5><span>03</span> Space launch 101</h5>
 
         <div class="mainInformation">
-          <div class="menu"><MenuTechnologyItem/></div>
+          <div class="menu"><MenuTechnologyItem @change-param="addNewParam" /></div>
 
           <div class="rightInfo">
             <div class="navText">The terminology...</div>
 
-            <h3>{{data.technology[this.id].name}} </h3>  
+            <h3>{{destinationData.name}} </h3>  
 
 
             <div class="bodyText">
-              {{data.technology[this.id].description}}
+              {{destinationData.description}}
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
 
 
       <div class="display">
-        <img class="images" :src="data.technology[this.id].images.portrait" alt="technology Image" />
+        <img class="images" :src="destinationData.images.portrait" alt="technology Image" />
       </div>
 
     </div>
@@ -49,10 +49,26 @@
       MenuTechnologyItem
     },
 
+    data() {
+      return{
+        technology: 0,
+      }
+    },
+
 
     computed: {
       ...mapState(['data']),
+
+      destinationData() {
+        return this.data.technology[this.technology];
+      },
     },
+
+    methods: {
+      addNewParam(amount) {
+        this.technology = amount.nb
+      }
+    }
 
   }
 

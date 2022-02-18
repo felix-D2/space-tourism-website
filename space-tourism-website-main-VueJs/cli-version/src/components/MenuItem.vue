@@ -14,7 +14,7 @@
             </router-link>
             
             
-            <router-link :to="{name: 'Destination', params: {id: '0'} }"
+            <router-link to="/destination"
             class="linkNav"> 
 
               <span>01</span> Destination
@@ -22,7 +22,7 @@
             </router-link>
             
 
-            <router-link :to="{name: 'Crew', params: {id: '0'}}"
+            <router-link to="/crew"
             class="linkNav">
             
             <span>02</span> Crew
@@ -30,13 +30,12 @@
             </router-link>
 
 
-            <router-link :to="{name: 'Technology', params: {id: '0'}}"
+            <router-link to="/technology"
             class="linkNav"> 
             
             <span>03</span> Technology
             <div class="linkNavUnderline"></div>
             </router-link>
-
 
           </div>
           

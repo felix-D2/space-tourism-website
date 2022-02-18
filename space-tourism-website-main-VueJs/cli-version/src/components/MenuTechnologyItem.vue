@@ -1,6 +1,6 @@
 <template>
-  <div class="nav">
-    <router-link
+  <div class="subNav">
+    <!-- <router-link
       :to="{ name: 'Technology', params: { id: '0' } }"
       class="navTextTechnology"
     >
@@ -19,19 +19,73 @@
       class="navTextTechnology"
     >
       3
-    </router-link>
+    </router-link> -->
+
+
+
+    <button class="navText" @click="changeParameter(0)" type="button"
+    style="opacity: 1; background: rgb(255, 255, 255); color: rgb(11, 13, 23);">
+      1
+    </button>
+
+
+    <button class="navText" @click="changeParameter(1)" type="button" >
+      2
+    </button>
+
+
+    <button class="navText" @click="changeParameter(2)" type="button" >
+      3
+    </button>
+
+
+
+      
   </div>
 </template>
 
 <script>
 export default {
   name: "MenuTechnologyItem",
+
+ data () {
+    return{
+    actualLink: 0
+    }
+  },
+  
+  methods: {
+    changeParameter(NavValue){
+      this.$emit('change-param', { nb: NavValue})
+      this.actualLink=NavValue    
+      let button = document.querySelector(".subNav");
+      let buttonUnderLine;
+
+
+
+      for(let i=0; i<3; i++) {
+        buttonUnderLine = button.getElementsByTagName('button')[i];
+
+        if(i == this.actualLink){
+          buttonUnderLine.style.opacity = "1";     //    Link underline activated
+          buttonUnderLine.style.background= "#ffffff";
+          buttonUnderLine.style.color= "#0b0d17";
+        }
+        else{
+          buttonUnderLine.removeAttribute("style");       //    Link underline desactivated
+        }
+      }
+         
+    }
+  }
+
+  
 };
 </script>
 
 <style scoped>
 
-.nav {
+.subNav {
   width: 90px;
   height: 330px;
 
@@ -41,7 +95,7 @@ export default {
   align-items: center;
 }
 
-.navTextTechnology { /*Bellefair Regular - 32px*/
+.navText { /*Bellefair Regular - 32px*/
   font-family: "Bellefair", serif;
   text-transform: uppercase;
 
@@ -55,34 +109,28 @@ export default {
 
   width: 80px;
   height: 80px;
-  border-radius: 100%;
+  border-radius: 50%;
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.25);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   color: #ffffff;
+  background: rgba(255, 255, 255, 0);
+
+
+  transition: all 0.4s;
 }
+
+
 
 
 
 /* ___Underline___ */
 
-
-.router-link-active  /* Link activated */ {
-  opacity: 1;
-  background: #ffffff;
-
-  color: #0b0d17;
-}
-
-.router-link-active   /*  Disable Link hover  */ {
-  pointer-events: none;
-}
-
-.navTextTechnology:hover   /* Link hover */ {
+.navText:hover   /* Link hover */ {
   border-color:rgba(255, 255, 255, 1);
 }
 </style>

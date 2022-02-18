@@ -1,27 +1,66 @@
 <template>
-  <div class="nav">
-    <router-link :to="{ name: 'Crew', params: { id: '0' } }" class="navText">
-    </router-link>
+  <div class="subNav">
 
-    <router-link :to="{ name: 'Crew', params: { id: '1' } }" class="navText">
-    </router-link>
 
-    <router-link :to="{ name: 'Crew', params: { id: '2' } }" class="navText">
-    </router-link>
 
-    <router-link :to="{ name: 'Crew', params: { id: '3' } }" class="navText">
-    </router-link>
+    <button class="navText" @click="changeParameter(0)" type="button" style="opacity: 1;">
+    </button>
+
+
+    <button class="navText" @click="changeParameter(1)" type="button" >
+    </button>
+
+
+    <button class="navText" @click="changeParameter(2)" type="button" >
+    </button>
+
+
+    <button class="navText" @click="changeParameter(3)" type="button" >
+    </button>
+
+
+
   </div>
 </template>
 
 <script>
 export default {
   name: "MenuCrewItem",
+
+  data () {
+    return{
+    actualLink: 0
+    }
+  },
+  
+    methods: {
+      changeParameter(NavValue){
+        this.$emit('change-param', { nb: NavValue})
+        this.actualLink=NavValue    
+        let button = document.querySelector(".subNav");
+        let buttonUnderLine;
+
+
+
+        for(let i=0; i<4; i++) {
+          buttonUnderLine = button.getElementsByTagName('button')[i];
+
+          if(i == this.actualLink){
+            buttonUnderLine.style.opacity = "1";     //    Link underline activated
+          }
+          else{
+            buttonUnderLine.removeAttribute("style");       //    Link underline desactivated
+          }
+        }
+         
+      }
+  }
+  
 };
 </script>
 
 <style scoped>
-.nav {
+.subNav {
   width: 130px;
 
   display: flex;
@@ -32,36 +71,17 @@ export default {
 .navText {
   width: 17px;
   height: 17px;
-  border-radius: 100%;
+  border-radius: 50%;
 
 
   background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
   opacity: 0.17;
+
+  transition: opacity 0.3s;
 }
 
-/* ___Underline___ */
 
-.linkNavUnderline {
-  opacity: 0;
-
-  position: relative;
-  top: 10px;
-
-  height: 3px;
-  width: 100%;
-
-  background: #ffffff;
-
-  pointer-events: none;
-}
-
-.router-link-active   /* Link underline activated */ {
-  opacity: 1;
-}
-
-.router-link-active   /*  Disable Link underline hover  */ {
-  pointer-events: none;
-}
 
 .navText:hover    /* Link hover */ {
   opacity: 0.5;

@@ -11,21 +11,21 @@
 
           
 
-          <h4>{{data.crew[this.id].role}}</h4>
+          <h4>{{destinationData.role}}</h4>
 
 
-          <h3>{{data.crew[this.id].name}}</h3>  
+          <h3>{{destinationData.name}}</h3>  
 
 
           <div class="bodyText">
-            {{data.crew[this.id].bio}}
+            {{destinationData.bio}}
           </div>
       </div>
 
-      <div class="menu"><MenuCrewItem/></div>
+      <div class="menu"><MenuCrewItem @change-param="addNewParam" /></div>
 
       <div class="display">
-        <img class="images" :src="data.crew[this.id].images.png" alt="planet Image" />
+        <img class="images" :src="destinationData.images.png" alt="planet Image" />
       </div>
     </div>
   </div>
@@ -48,18 +48,27 @@
     },
 
 
-
-    // data() {
-    //   return{
-    //     destinationId: 0,
-    //   }
-    // },
+    data() {
+      return{
+        crew: 0,
+      }
+    },
 
 
     computed: {
       ...mapState(['data']),
 
+      destinationData() {
+        return this.data.crew[this.crew];
+      },
     },
+
+
+    methods: {
+      addNewParam(amount) {
+        this.crew = amount.nb
+      }
+    }
 
   }
 </script>
