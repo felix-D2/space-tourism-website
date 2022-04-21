@@ -29,6 +29,9 @@
 
   body
   {
+    position: fixed;
+    top: 0;
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,10 +39,13 @@
 
     height: 100%;
     width: 100%;
+    
 
     display: flex;
 
-    background-color:black;
+    background-color:rgb(0, 0, 0);
+
+    
   }
 
 
@@ -135,10 +141,12 @@
     line-height: 17px;
 
     font-size: 14px;
-    letter-spacing: 2.35px;
+    letter-spacing: 2.3625px;
 
     color: #FFFFFF;
   }
+
+  
 
   //____Text___
 
@@ -151,6 +159,7 @@
 
     color: #FFFFFF;
   }
+  
 
 
   .bodyText   //Body Text - Barlow Regular - 18px
@@ -159,7 +168,6 @@
 
     font-style: normal;
     font-weight: normal;
-    line-height: 32px;
 
     font-size: 18px;
     line-height: 32px;
@@ -170,6 +178,90 @@
   }
 
 
+
+  @media screen and (max-width: 1215px)
+  {/* Tablet version, or lower than max-width */
+
+    /* ___Font____ */
+    
+    h1
+    {
+      line-height: 150px;
+    }
+
+    h2
+    {
+      line-height: 92px;
+      font-size: 80px;
+    }
+
+    h3
+    {
+      line-height: 46px;
+      font-size: 40px;
+    }
+
+    h4
+    {
+      line-height: 28px;
+      font-size: 24px;
+    }
+
+    h5 
+    {
+      line-height: 24px;
+      font-size: 20px;
+      letter-spacing: 3.375px;
+    }
+
+    .bodyText
+    {
+      font-size: 16px;
+      line-height: 28px;
+      text-align: center;
+    }
+  
+  }
+
+
+
+
+    @media screen and (max-width: 580px)
+  {/* Mobile version, or lower than max-width */
+
+    /* ___Font____ */
+    
+    h1
+    {
+      line-height: 100px;
+      font-size: 80px;
+    }
+
+    h2
+    {
+      line-height: 64px;
+      font-size: 56px;
+    }
+
+    h3
+    {
+      line-height: 28px;
+      font-size: 24px;
+    }
+
+    h4
+    {
+      line-height: 18px;
+      font-size: 16px;
+    }
+
+    h5 
+    {
+      line-height: 18px;
+      font-size: 16px;
+    }
+  
+  }
 
 
 

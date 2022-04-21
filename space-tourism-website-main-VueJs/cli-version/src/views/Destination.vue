@@ -11,7 +11,6 @@
       <div class="information">
         <div class="menu"><MenuDestinationItem @change-param="addNewParam" /></div>
 
-        
 
         <h2>{{destinationData.name}}</h2>  
 
@@ -25,22 +24,26 @@
 
         <diV class="travelInformation">
 
-          <div class="subheading2">
-            Avg. distance
-          </div>
-
-          <div class="subheading1">
-            {{destinationData.distance}}
-          </div>
-
+          <div class="informationDistance">
+            <div class="subheading2">
+              Avg. distance
+            </div>
           
 
-          <div class="subheading2">
-            Est. travel time
+            <div class="subheading1">
+              {{destinationData.distance}}
+            </div>
           </div>
+          
 
-          <div class="subheading1">
-            {{destinationData.travel}}
+          <div class="informationTravel"> 
+            <div class="subheading2">
+              Est. travel time
+            </div>
+
+            <div class="subheading1">
+              {{destinationData.travel}}
+            </div>
           </div>
       
         </diV>
@@ -94,15 +97,18 @@
 
   /*    ___Background___    */
 
-  .destination {
+  .destination 
+  {
     position: absolute;
 
-    background:  center fixed no-repeat url("/images/destination/background-destination-desktop.jpg");
+    background: center fixed no-repeat url("/images/destination/background-destination-desktop.jpg");
     background-size: cover;   /* Background resize */
-    height: 100%;
+    height: 110%;
     width: 100%;
 
-    z-index:1;
+    overflow: auto;   /*à mettre impérativement, pour éviter des problème d'affichage (ex : background d'une autre couleur) */
+
+    z-index: 1;
   }
   /*    *****************    */
 
@@ -113,16 +119,13 @@
     position: absolute;
     width: 80%;
 
-
     top: 20%;
     right: 10%;
 
-    display: flex;
 
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
-    border: 2px solid rgb(224, 19, 19);
   }
 
 
@@ -136,7 +139,7 @@
     flex-direction: column;
     align-items: space-between;
 
-    border: 2px solid rgb(19, 224, 19);
+    margin-right: 4%;
   }
 
 
@@ -172,9 +175,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
-
-    border: 2px solid rgb(160, 10, 219);
   }
 
 
@@ -184,17 +184,10 @@
     margin-bottom: 10%;
   }
 
-
-  .travelInformation
+  .bodyText
   {
-    display: flex;
-    flex-wrap: wrap;
-
-
-    align-items: flex-start;
-    justify-content: space-between;
+    margin-top: 1%;
   }
-
 
   .ligne
   {
@@ -204,13 +197,35 @@
     margin-top: 15%;
     margin-bottom: 8%;
 
+
     background: #383B4B;
   }
 
 
+  .travelInformation
+  {
+    display: flex;
+
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .informationDistance
+  {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .informationTravel
+  {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
   .subheading1, .subheading2
   {
-    width: 40%;
     text-align: left;
   }
 
@@ -219,10 +234,145 @@
     margin-bottom: 3%;
   }
 
-  .travelInformation > .subheading1
-  {
-    order: 3;
-  }
+
   /*      *************      */
 
+
+
+
+
+/*    Responsive      */
+
+
+  @media screen and (max-width: 1215px)
+  {/* Tablet version, or lower than max-width */
+
+    .destination
+    {
+      background: center fixed no-repeat url("/images/destination/background-destination-tablet.jpg");
+      background-size: cover;   /* Background resize */
+    }
+
+    .contents
+    {
+      left: 5%;
+
+      width: 90%;
+
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h5 
+    {
+      position: absolute;
+      left: 0px;
+
+      margin-bottom: 10px;
+    }
+
+    .images
+    {
+      margin-top: 20%;
+      margin-left: auto;
+
+      height: 300px;
+      width: 300px;
+
+     
+    }
+
+
+    .information
+    {
+      margin-bottom: 10%;
+      align-items: center;
+      width: 80%;
+    }
+
+    .menu
+    {
+      margin-top: 10%;
+      margin-bottom: 10%;
+    }
+
+    .ligne
+    {
+      margin-top: 5%;
+    }
+
+    .informationDistance, .informationTravel
+    {
+      align-items: center;
+    }
+
+  }
+
+
+
+
+
+
+    @media screen and (max-width: 580px)
+  {/* Mobile version, or lower than max-width */
+
+    .destination 
+    {
+      background: center fixed no-repeat url("/images/destination/background-destination-mobile.jpg");
+      background-size: cover;   /* Background resize */
+    }
+
+    .contents
+    {
+      top: 15%;
+    }
+
+    .display
+    {
+      justify-content: center;
+    }
+
+    h5 
+    {
+      position: relative;
+      align-self: center;
+    }
+
+    .images
+    {
+      height: 170px;
+      width: 170px;
+      margin-right: auto;
+      margin-top: 10%;
+    }
+
+    .information
+    {
+      width: 100%;
+    }
+
+    .menu
+    {
+      margin-top: 10%;
+    }
+
+    .travelInformation
+    {
+      flex-direction: column;
+      align-items: center;
+
+      padding-bottom: 10%;
+    }
+
+    .informationDistance
+    {
+      padding-bottom: 10%;
+    }
+
+    .informationTravel
+    {
+      margin-bottom: 20%;
+    }
+
+  }
 </style>

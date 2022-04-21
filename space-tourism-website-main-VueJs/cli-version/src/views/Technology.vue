@@ -24,7 +24,8 @@
 
 
       <div class="display">
-        <img class="images" :src="destinationData.images.portrait" alt="technology Image" />
+        <img class="images_portrait" :src="destinationData.images.portrait" alt="technology Image" />
+        <img class="images_landscape" :src="destinationData.images.landscape" alt="technology Image" />
       </div>
 
     </div>
@@ -85,13 +86,16 @@
 
 /*    ___Background___    */
 
-  .technology {
+  .technology 
+  {
     position: absolute;
 
     background:  center fixed no-repeat url("/images/technology/background-technology-desktop.jpg");
     background-size: cover;   /* Background resize */
-    height: 100%;
+    height: 110%;
     width: 100%;
+
+    overflow: auto;   /*à mettre impérativement, pour éviter des problème d'affichage (ex : background d'une autre couleur) */
 
     z-index:1;
   }
@@ -110,8 +114,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
-    border: 2px solid rgb(224, 19, 19);
   }
 
 
@@ -123,13 +125,19 @@
   {
     display: flex;
     justify-content: flex-end;
-    border: 2px solid rgb(19, 224, 19);
   }
 
-  .images
+  .images_portrait
   {
+    display: block;
     width: 90%;
   }
+
+  .images_landscape{
+    display: none;
+  }
+
+
  /*    *****************    */
 
 
@@ -144,16 +152,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    border: 2px solid rgb(160, 10, 219);
   }
 
 
   h5
   {
     margin-bottom: 11%;
-
-    border: 2px solid rgb(45, 196, 58);
   }
 
 
@@ -167,8 +171,6 @@
   {
     display: flex;
     justify-content: space-between;
-
-    border: 2px solid rgb(219, 163, 10);
   }
 
   .rightInfo
@@ -177,8 +179,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    border: 2px solid rgb(48, 10, 219);
   }
 
   .navText
@@ -197,9 +197,124 @@
     width: 70%;
   }
 
-  .menu
-  {
-    border: 2px solid rgb(19, 224, 214);
-  }
 /*      *************      */
+
+
+
+
+/*    Responsive      */
+
+
+  @media screen and (max-width: 1215px)
+  {/* Tablet version, or lower than max-width */
+    
+    .technology
+    {
+      background:  center fixed no-repeat url("/images/technology/background-technology-tablet.jpg");
+      background-size: cover;   /* Background resize */
+    }
+
+    .contents
+    {
+      flex-direction: column-reverse;
+      align-items: center;
+
+      top: 20%;
+
+      width: 100%;
+    }
+
+    h5 
+    {
+      position: absolute;
+      top: 0;
+      left: 1%;
+    }
+
+    .display
+    {
+      justify-content: center;
+      margin-top: 15%;
+      width: 100%;
+    }
+
+    .images_portrait
+    {
+      display: none;
+    }
+
+    .images_landscape{
+      display: block;
+      width: 100%;
+    }
+
+    .information
+    {
+      width: 100%;
+      margin-top: 10%;
+    }
+
+
+    .mainInformation
+    {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rightInfo
+    {
+      margin-top: 8%;
+      margin-bottom: 15%;
+      align-items: center;
+    }
+    
+  }
+
+
+
+
+
+
+  @media screen and (max-width: 580px)
+  {/* Mobile version, or lower than max-width */
+    
+    .technology
+    {
+      background:  center fixed no-repeat url("/images/technology/background-technology-mobile.jpg");
+      background-size: cover;   /* Background resize */
+    }
+
+    .contents
+    {
+      top: 15%;
+    }
+
+    h5 
+    {
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+
+
+    .rightInfo
+    {
+      width: 100%;
+    }
+
+    .navText
+    {
+      margin-bottom: 3%;
+    }
+    
+    .bodyText
+    {
+      width: 90%;
+      margin-bottom: 20%;
+    }
+
+  }
+
+
+
 </style>

@@ -2,7 +2,7 @@
     <div class="subNav">
 
 
-      <button class="navText" @click="changeParameter(0)" type="button">
+      <button class="navText" @click="changeParameter(0)" type="button" style="cursor: auto;">
         Moon
         <div class="linkNavUnderlineButton" style="opacity: 1;"></div>
       </button>
@@ -46,22 +46,27 @@
 
     methods: {
       changeParameter(NavValue){
-        this.$emit('change-param', { nb: NavValue})
-        this.actualLink=NavValue
+        this.$emit('change-param', { nb: NavValue});
+        this.actualLink=NavValue;
 
-        let button = document.querySelector(".subNav");
+        let nav = document.querySelector(".subNav");
         let buttonUnderLine;
+        let buttonSelected;
         
 
 
         for(let i=0; i<4; i++) {
-          buttonUnderLine = button.getElementsByTagName('div')[i];
+          buttonUnderLine = nav.getElementsByTagName('div')[i];
+          buttonSelected = nav.getElementsByTagName('button')[i];
 
           if(i == this.actualLink){
             buttonUnderLine.style.opacity = "1";     //    Link underline activated
+
+            buttonSelected.style.cursor = 'auto';   //    Cursor modification (arrow)
           }
           else{
             buttonUnderLine.removeAttribute("style");       //    Link underline desactivated
+            buttonSelected.removeAttribute("style");        //    Cursor modification (hand, default mode)
           }
         }
          
@@ -91,11 +96,12 @@
 
 
 
-.navText
-{
-  background: none;
-  border: none;
-}
+  .navText
+  {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
 
 
@@ -145,5 +151,21 @@
     opacity: 0.5;
   }
   
+
+
+
+
+
+    @media screen and (max-width: 580px)
+  {/* Mobile version, or lower than max-width */
+
+  
+    .subNav 
+    {    
+      width: 237.5px;
+      height: 28px;
+    }
+
+  }
 
 </style>

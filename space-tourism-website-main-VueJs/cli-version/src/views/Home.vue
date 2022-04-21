@@ -3,24 +3,24 @@
     <div class="home">
 
       <div class="contents">
-        
-        <h5>So, you want to travel to</h5>
+        <div class="information">
+          <h5>So, you want to travel to</h5>
 
-        <h1>Space</h1>
+          <h1>Space</h1>
 
-        <div class="bodyText">     
-          Let’s face it; if you want to go to space, you might as well genuinely go to 
-          outer space and not hover kind of on the edge of it. Well sit back, and relax 
-          because we’ll give you a truly out of this world experience!
+          <div class="bodyText">     
+            Let’s face it; if you want to go to space, you might as well genuinely go to 
+            outer space and not hover kind of on the edge of it. Well sit back, and relax 
+            because we’ll give you a truly out of this world experience!
+          </div>
+
         </div>
 
+        <button class="exploreButton" @click="goDestination()" type="button">
+          Explore
+        </button>
 
       </div>
-
-
-      <button class="exploreButton" @click="goDestination()" type="button">
-        Explore
-      </button>
 
     </div>
   </section>
@@ -51,21 +51,30 @@
 
 <style scoped>
 
-
-  .home {
+  .home 
+  {
     position: absolute;
 
     background:  center fixed no-repeat url("/images/home/background-home-desktop.jpg");
     background-size: cover;   /* Background resize */
-    height: 100%;
+    height: 110%;
     width: 100%;
+
+    overflow: auto;   /*à mettre impérativement, pour éviter des problème d'affichage (ex : background d'une autre couleur) */
 
     z-index: 1;
   }
 
+  .contents
+  {
+    
+    width: 100%;
+    height: 100%;
+  }
 
-  .contents{
-    position: relative;
+  .information 
+  {    
+    position: absolute;
     top: 35%;
     left: 8%;
 
@@ -77,6 +86,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    
   }
 
 
@@ -85,12 +95,12 @@
     position: absolute;
     bottom: 15%;
     right: 10%;
-    
 
     width: 274px;
     height: 274px;
     border-radius: 50%;
     margin: 0;
+
 
     display: flex;
     justify-content: center;
@@ -113,6 +123,7 @@
     text-decoration: none;
     line-height: 37px;
     font-size: 32px;
+    letter-spacing: 2px;
 
     color: #0B0D17;
   }
@@ -120,7 +131,7 @@
 
 
 
- /*      Animations      */
+  /*      Animations      */
 
 
 /* exploreButton */
@@ -172,17 +183,84 @@ h1
 /*    Responsive      */
 
 
-
-  @media screen and (max-width: 780px)
+  @media screen and (max-width: 1215px)
   {/* Tablet version, or lower than max-width */
 
-  .home {
-    background:  center fixed no-repeat url("/images/home/background-home-tablet.jpg");
-  }
+    .home 
+    {
+      background: center fixed no-repeat url("/images/home/background-home-tablet.jpg");
+      background-size: cover;   /* Background resize */
+    }
+
+    .contents
+    {
+      padding-bottom: 20%;
+    }
+
+    .information
+    {    
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%); 
+
+      height: 30%;
+      width: 75%;
+    }
+
 
     .exploreButton
     {
-      background-color:rgb(24, 111, 224);
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%); 
+
+      height: 242px;
+      width: 242px;
+
+      
+    }
+
+
+  }
+
+
+
+
+
+  @media screen and (max-width: 580px)
+  {/* Mobile version, or lower than max-width */
+
+    .home 
+    {
+      background:  center fixed no-repeat url("/images/home/background-home-mobile.jpg");
+      background-size: cover;   /* Background resize */
+    }
+
+        
+    .contents
+    {
+      padding-bottom: 20%;
+    }
+
+    .information
+    {
+      top: 15%;
+
+      height: 45%;
+      width: 95%;
+    }
+
+    .exploreButton
+    {
+      height: 150px;
+      width: 150px;
+
+
+
+      /*      ___Font___      */
+      line-height: 23px;
+      font-size: 20px;
+      letter-spacing: 1.25px;
     }
   }
 

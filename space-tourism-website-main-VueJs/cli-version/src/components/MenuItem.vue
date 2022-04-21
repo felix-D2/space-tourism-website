@@ -1,9 +1,8 @@
 <template>
-  <header>
     <div class="menu">
       <div class="navZone">
-        <div class="fuzzyRectangle">
-          <div class="nav">
+        <div class="fuzzyRectangle responsive">
+          <div class="nav responsive">
 
 
             <router-link to="/"
@@ -43,14 +42,25 @@
 
         <div class="ligne"></div>
         <img class="logo" src="/images/shared/logo.svg" alt="logo"/>
+
         
+
+        <a class="hamburger" @click="myFunction()">
+          <img src="/images/shared/icon-hamburger.svg" alt="icon hamburger"/>
+        </a>
+
 
       </div>
       
-      <router-view/>
+      <transition
+        mode="out-in"
+        enter-active-class="animate__animated animate__fadeIn"
+        leave-active-class="animate__animated animate__fadeOut"
+      >
+        <router-view/>
+      </transition>
       
     </div>
-  </header>
 </template>
 
 
@@ -59,6 +69,32 @@
 <script>
   export default {
     name: 'MenuItem',
+
+      
+      // Use for mobile menu
+      methods: {
+        myFunction() {
+          
+          let classNav = document.querySelector(".nav");
+          let classFuzzyRectangle = document.querySelector(".fuzzyRectangle");
+          let classHamburger = document.querySelector(".hamburger>img");
+
+            // var x = document.getElementById("nav");
+            if (classNav.className === "nav") {
+              classNav.className += " responsive";
+              classFuzzyRectangle.className += " responsive";
+
+              classHamburger.src="/images/shared/icon-hamburger.svg";
+                
+            } else {
+              classNav.className = "nav";
+              classFuzzyRectangle.className = "fuzzyRectangle";
+
+              classHamburger.src="/images/shared/icon-close.svg";
+            }
+        }
+      }
+    
   }
 </script>
 
@@ -71,16 +107,16 @@
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
 
 
-
   .navZone
   {
-    position: absolute;
+    position: fixed;
     top: 40px;
     right: 0px;
     z-index: 2;   /*Met au premier plan */
 
-    width: 96vw;
     height: 96px;
+    width: 96vw;
+
 
     display: flex;
 
@@ -111,10 +147,10 @@
     width: 542px;
     height: 19px;
 
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 
 
@@ -125,8 +161,8 @@
     left: 112px;
 
     width: 38vw;
-
     height: 1px;
+
 
     background: #FFFFFF;
     mix-blend-mode: normal;
@@ -140,17 +176,24 @@
     top: 24px;
     left: 0px;
   }
+
+  .hamburger
+  {
+    display: none;
+  }
   
 
   .linkNav
   {
-
     color: #FFFFFF;
     text-decoration: none;
 
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
     text-transform: uppercase;
+    
   }
   .linkNav span
   {
@@ -199,6 +242,173 @@
   .linkNav:hover > .linkNavUnderline    /* Link underline hover */
   {
     opacity: 0.5;
+  }
+
+
+
+
+/*    Responsive      */
+
+
+  @media screen and (max-width: 1420px)
+  {/* lower than max-width, about ligne*/
+    .ligne
+    {
+      display: none;
+    }
+
+  }
+
+
+  @media screen and (max-width: 1060px)
+  {/* Tablet version, or lower than max-width */
+
+    .navZone
+    {
+      top: 0;
+    }
+
+    .fuzzyRectangle
+    {
+      width: 60vw;
+      min-width: 450px;
+    }
+    .nav
+    {
+      height: 18px;
+      width: 356px;
+    }
+
+    .ligne
+    {
+      display: none;
+    }
+
+    span
+    {
+      display: none;
+    }
+
+
+    /* ___Font____ */
+
+    .linkNav
+    {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 2.3625px;
+    }
+  }
+
+
+
+
+
+    @media screen and (max-width: 580px)
+  {/* Mobile version, or lower than max-width */
+
+
+    .menu
+    {
+      height: 100%;
+      width: 100%;
+    }
+
+
+    .fuzzyRectangle
+    {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      height: 100vh;
+      width: 67vw;
+
+      min-width: 0;
+
+
+      display: flex;
+      justify-content: flex-end;
+      align-content: flex-start;
+    }
+
+    .nav.responsive
+    {
+      display: none;
+    }
+
+    .fuzzyRectangle.responsive
+    {
+      display: none;
+    }
+
+    .logo
+    {
+      left: 24px;
+
+      height: 40px;
+      width: 40px;
+    }
+
+    .hamburger
+    {
+      display: block;
+
+      cursor: pointer;
+
+      position: absolute;
+      top: 33.5px;
+      right: 40px;
+
+      height: 21px;
+      width: 24px;
+    }
+
+    .nav
+    {
+      flex-direction: column;
+      align-items: flex-start;
+
+
+      transform: translate(0);
+      top: 20%;
+      left: auto;
+      right: 0px;
+      
+      height: 30%;
+      width: 80%;
+    }
+
+    span
+    {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .linkNav
+    {
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+
+
+      height: 15%;
+      width: 100%;
+
+
+      display: flex;
+      align-items: center;
+    }
+
+    .linkNavUnderline
+    {
+      margin-left: auto;
+      
+      top: 0;
+
+      height: 100%;
+      width: 4px;
+    }
   }
 
 </style>

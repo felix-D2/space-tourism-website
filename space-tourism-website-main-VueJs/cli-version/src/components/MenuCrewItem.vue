@@ -2,8 +2,7 @@
   <div class="subNav">
 
 
-
-    <button class="navText" @click="changeParameter(0)" type="button" style="opacity: 1;">
+    <button class="navText" @click="changeParameter(0)" type="button" style="opacity: 1; cursor: auto;">
     </button>
 
 
@@ -37,19 +36,21 @@ export default {
       changeParameter(NavValue){
         this.$emit('change-param', { nb: NavValue})
         this.actualLink=NavValue    
-        let button = document.querySelector(".subNav");
-        let buttonUnderLine;
+        let nav = document.querySelector(".subNav");
+        let buttonSelected;
 
 
 
         for(let i=0; i<4; i++) {
-          buttonUnderLine = button.getElementsByTagName('button')[i];
+          buttonSelected = nav.getElementsByTagName('button')[i];
 
           if(i == this.actualLink){
-            buttonUnderLine.style.opacity = "1";     //    Link underline activated
+            buttonSelected.style.opacity = "1";     //    Link underline activated
+           
+           buttonSelected.style.cursor = 'auto';
           }
           else{
-            buttonUnderLine.removeAttribute("style");       //    Link underline desactivated
+            buttonSelected.removeAttribute("style");       //    Link underline desactivated
           }
         }
          
@@ -77,6 +78,8 @@ export default {
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   opacity: 0.17;
+
+  cursor: pointer;
 
   transition: opacity 0.3s;
 }

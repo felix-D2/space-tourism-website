@@ -1,30 +1,8 @@
 <template>
   <div class="subNav">
-    <!-- <router-link
-      :to="{ name: 'Technology', params: { id: '0' } }"
-      class="navTextTechnology"
-    >
-      1
-    </router-link>
-
-    <router-link
-      :to="{ name: 'Technology', params: { id: '1' } }"
-      class="navTextTechnology"
-    >
-      2
-    </router-link>
-
-    <router-link
-      :to="{ name: 'Technology', params: { id: '2' } }"
-      class="navTextTechnology"
-    >
-      3
-    </router-link> -->
-
-
 
     <button class="navText" @click="changeParameter(0)" type="button"
-    style="opacity: 1; background: rgb(255, 255, 255); color: rgb(11, 13, 23);">
+    style="opacity: 1; background: rgb(255, 255, 255); color: rgb(11, 13, 23); cursor: auto;">
       1
     </button>
 
@@ -58,21 +36,24 @@ export default {
     changeParameter(NavValue){
       this.$emit('change-param', { nb: NavValue})
       this.actualLink=NavValue    
-      let button = document.querySelector(".subNav");
-      let buttonUnderLine;
+
+      let nav = document.querySelector(".subNav");
+      let buttonSelected;
 
 
 
       for(let i=0; i<3; i++) {
-        buttonUnderLine = button.getElementsByTagName('button')[i];
+        buttonSelected = nav.getElementsByTagName('button')[i];
 
         if(i == this.actualLink){
-          buttonUnderLine.style.opacity = "1";     //    Link underline activated
-          buttonUnderLine.style.background= "#ffffff";
-          buttonUnderLine.style.color= "#0b0d17";
+          buttonSelected.style.opacity = "1";     //    Link underline activated
+          buttonSelected.style.background= "#ffffff";
+          buttonSelected.style.color= "#0b0d17";
+
+          buttonSelected.style.cursor = 'auto';
         }
         else{
-          buttonUnderLine.removeAttribute("style");       //    Link underline desactivated
+          buttonSelected.removeAttribute("style");       //    Link underline desactivated
         }
       }
          
@@ -111,6 +92,7 @@ export default {
   height: 80px;
   border-radius: 50%;
 
+
   border: 2px solid rgba(255, 255, 255, 0.25);
 
   display: flex;
@@ -120,6 +102,7 @@ export default {
   color: #ffffff;
   background: rgba(255, 255, 255, 0);
 
+  cursor: pointer;
 
   transition: all 0.4s;
 }
@@ -133,4 +116,59 @@ export default {
 .navText:hover   /* Link hover */ {
   border-color:rgba(255, 255, 255, 1);
 }
+
+
+
+
+
+/*    Responsive      */
+
+
+@media screen and (max-width: 1215px)
+{/* Tablet version, or lower than max-width */
+    
+
+  .subNav
+  {
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 330px;
+    height: 90px;
+  }
+
+  .navText 
+  {
+    width: 60px;
+    height: 60px;
+
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1.5px;
+  }
+
+}
+
+
+
+
+
+@media screen and (max-width: 580px)
+{/* Mobile version, or lower than max-width */
+    
+
+  .subNav
+  {
+    width: 152px;
+    height: 40px;
+  }
+
+  .navText 
+  {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
 </style>
