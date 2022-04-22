@@ -260,6 +260,7 @@
     {
       margin-top: 3%;
       margin-bottom: 0;
+      width: auto;
     }
 
     h5 
