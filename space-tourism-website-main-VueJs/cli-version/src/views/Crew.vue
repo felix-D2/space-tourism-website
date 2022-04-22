@@ -352,6 +352,7 @@
     .menu
     {
       order: 1;
+      bottom: -17px
     }
 
     h4 
