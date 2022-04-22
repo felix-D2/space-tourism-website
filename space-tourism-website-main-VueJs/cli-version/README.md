@@ -17,3 +17,9 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+Final project: branch design
+
+Built website : https://space-tourism-website-felix.netlify.app/crew
