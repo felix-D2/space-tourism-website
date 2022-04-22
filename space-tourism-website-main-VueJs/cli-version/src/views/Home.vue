@@ -81,12 +81,19 @@
     width: 450px;
     height: 382px;
 
+    padding-bottom: min(30px, 15%);
+
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     
+  }
+
+  .bodytext
+  {
+    padding-bottom: min(30px, 15%);
   }
 
 

@@ -110,6 +110,9 @@
 
     top: 25%;
     right: 0;
+    
+    padding-bottom: min(30px, 15%);
+
 
     display: flex;
     justify-content: space-between;

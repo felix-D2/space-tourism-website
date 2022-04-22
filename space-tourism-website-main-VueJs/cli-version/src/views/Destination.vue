@@ -122,6 +122,8 @@
     top: 20%;
     right: 10%;
 
+    padding-bottom: min(30px, 15%);
+
 
     display: flex;
     justify-content: space-between;
