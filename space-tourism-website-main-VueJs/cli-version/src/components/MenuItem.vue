@@ -139,7 +139,7 @@
   {
     position: relative;
     top: 39px;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%);
     right: 50%;
     transform: translate(0, 0, -50%);
