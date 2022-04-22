@@ -135,7 +135,7 @@
   }
 
 
-  .nav 
+  .nav
   {
     position: relative;
     top: 39px;

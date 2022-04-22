@@ -165,18 +165,19 @@
   {
     text-align: left;
     margin-bottom: 5%;
+    width: 115%;
   }
 
 
   .bodyText
   {
-    width: 70%;
+    width: 102%;
   }
 
   .menu
-  {    
+  {
     position: absolute;
-    bottom: 5%;
+    bottom: 20%;
   }
 
 

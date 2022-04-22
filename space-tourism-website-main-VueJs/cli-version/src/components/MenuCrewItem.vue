@@ -61,7 +61,8 @@ export default {
 </script>
 
 <style scoped>
-.subNav {
+.subNav 
+{
   width: 130px;
 
   display: flex;
@@ -69,7 +70,8 @@ export default {
   align-items: center;
 }
 
-.navText {
+.navText 
+{
   width: 17px;
   height: 17px;
   border-radius: 50%;
@@ -86,7 +88,8 @@ export default {
 
 
 
-.navText:hover    /* Link hover */ {
+.navText:hover    /* Link hover */ 
+{
   opacity: 0.5;
 }
 </style>
