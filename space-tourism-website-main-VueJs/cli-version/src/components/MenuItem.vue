@@ -139,10 +139,8 @@
   {
     position: relative;
     top: 39px;
-    left: 30%;
-    transform: translate(-50%);
-    right: 50%;
-    transform: translate(0, 0, -50%);
+    left: 50%;
+    transform: translateX(-50%);
     
     width: 542px;
     height: 19px;
@@ -270,8 +268,8 @@
 
     .fuzzyRectangle
     {
-      width: 60vw;
-      min-width: 450px;
+      width: 55%;
+      min-width: 480px;
     }
     .nav
     {
