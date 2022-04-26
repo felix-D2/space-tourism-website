@@ -202,11 +202,15 @@ h1
     .contents
     {
       padding-bottom: 20%;
+      padding-top: 124px;
+
+      height: auto;
     }
 
     .information
     {    
-      top: 25%;
+      position: relative;
+      top: 15%;
       left: 50%;
       transform: translate(-50%); 
 
@@ -217,7 +221,8 @@ h1
 
     .exploreButton
     {
-      top: 75%;
+      position: relative;
+      top: 340px;
       left: 50%;
       transform: translate(-50%); 
 
@@ -244,21 +249,19 @@ h1
     }
 
         
-    .contents
-    {
-      padding-bottom: 20%;
-    }
 
     .information
     {
-      top: 15%;
+      top: 0;
 
-      height: 45%;
+      height: 315px;
       width: 95%;
     }
 
     .exploreButton
     {
+      top: 20px;
+
       height: 150px;
       width: 150px;
 
