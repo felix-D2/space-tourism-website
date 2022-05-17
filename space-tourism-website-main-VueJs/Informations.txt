@@ -1,0 +1,2 @@
+Les fichiers, deploy.bat et vue.config.js on était utilisé pour des test de déployment, mais
+ne sont pas nécessaires pour Netlify. Ils créés la branch gh-pages.
