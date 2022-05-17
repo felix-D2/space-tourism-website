@@ -66,16 +66,56 @@ To see how you can add code snippets, see below:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
+
+     <router-link to="/"
+            class="linkNav"> 
+
+              <span>00</span> Home
+              <div class="linkNavUnderline"></div>
+            </router-link>
+            
+            ...
+            
+            <router-view/>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.fuzzyRectangle
+{
+  ...
+  backdrop-filter: blur(81.5485px);
+}
+
+
+
+
+.technology 
+{
+  ...
+
+  background:  center fixed no-repeat url("/images/technology/background-technology-desktop.jpg");
+  background-size: cover;   /* Background resize */
+
+  overflow: auto;
+}
+
+
+
+
+.linkNavUnderline
+{
+  ...
+  pointer-events: none;
+
+  transition: opacity 0.3s;
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+...mapState(['data']),
+
+destinationData() {
+  return this.data.technology[this.technology];
+},
+
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.

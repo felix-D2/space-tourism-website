@@ -8,7 +8,7 @@
 
           <h1>Space</h1>
 
-          <div class="bodyText">     
+          <div class="bodyText">
             Let’s face it; if you want to go to space, you might as well genuinely go to 
             outer space and not hover kind of on the edge of it. Well sit back, and relax 
             because we’ll give you a truly out of this world experience!
@@ -60,7 +60,7 @@
     height: 110%;
     width: 100%;
 
-    overflow: auto;   /*à mettre impérativement, pour éviter des problème d'affichage (ex : background d'une autre couleur) */
+    overflow: auto;   /*à mettre impérativement, pour éviter des problèmes d'affichage (ex : background d'une autre couleur) */
 
     z-index: 1;
   }
@@ -216,13 +216,14 @@ h1
 
       height: 30%;
       width: 75%;
+      margin-top: 30px;
+      margin-bottom: 50px;
     }
 
 
     .exploreButton
     {
       position: relative;
-      top: 340px;
       left: 50%;
       transform: translate(-50%); 
 

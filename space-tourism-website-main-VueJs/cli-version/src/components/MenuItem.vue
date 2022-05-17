@@ -264,6 +264,7 @@
     .navZone
     {
       top: 0;
+      width: auto;
     }
 
     .fuzzyRectangle
@@ -271,6 +272,12 @@
       width: 55%;
       min-width: 480px;
     }
+
+    .logo{
+      left: auto;
+      right: 90vw;
+    }
+
     .nav
     {
       height: 18px;
@@ -304,7 +311,6 @@
 
     @media screen and (max-width: 580px)
   {/* Mobile version, or lower than max-width */
-
 
     .menu
     {
@@ -342,7 +348,10 @@
 
     .logo
     {
-      left: 24px;
+      position: absolute;
+      left: auto;
+      right: 85vw;
+      
 
       height: 40px;
       width: 40px;

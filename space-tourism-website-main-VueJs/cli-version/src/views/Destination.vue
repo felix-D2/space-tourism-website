@@ -106,7 +106,7 @@
     height: 110%;
     width: 100%;
 
-    overflow: auto;   /*à mettre impérativement, pour éviter des problème d'affichage (ex : background d'une autre couleur) */
+    overflow: auto;   /*à mettre impérativement, pour éviter des problèmes d'affichage (ex : background d'une autre couleur) */
 
     z-index: 1;
   }
