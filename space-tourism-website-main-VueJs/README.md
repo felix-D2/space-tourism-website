@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/felix-D2/space-tourism-website/tree/design/space-tourism-website-main-VueJs/cli-version](https://your-solution-url.com)
-- Live Site URL: [https://space-tourism-website-felix.netlify.app](https://your-live-site-url.com)
+- Solution URL: [https://github.com/felix-D2/...](https://github.com/felix-D2/space-tourism-website/tree/design/space-tourism-website-main-VueJs/cli-version)
+- Live Site URL: [my site](https://space-tourism-website-felix.netlify.app))
 
 
 ## My process
