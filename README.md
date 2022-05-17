@@ -111,9 +111,7 @@ destinationData() {
 - Frontend Mentor - [@felix-D2](https://www.frontendmentor.io/profile/felix-D2)
 - Github - [@felix-D2](https://github.com/felix-D2)
 
-<<<<<<< HEAD
-=======
-========
+
 # Frontend Mentor - Space tourism website solution
 
 This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -226,6 +224,3 @@ destinationData() {
 
 - Frontend Mentor - [@felix-D2](https://www.frontendmentor.io/profile/felix-D2)
 - Github - [@felix-D2](https://github.com/felix-D2)
-
->>>>>>>> 8c2074f0331ba4efd5607c9c3592ec2d60a4d30a:README.md
->>>>>>> 8c2074f0331ba4efd5607c9c3592ec2d60a4d30a
