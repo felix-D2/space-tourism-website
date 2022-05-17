@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./cli-version/screenshot.png)
 
 
 ### Links
